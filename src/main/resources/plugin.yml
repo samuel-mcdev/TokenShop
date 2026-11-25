@@ -1,0 +1,24 @@
+name: TokenShop
+version: '${version}'
+main: dev.tokenshop.TokenShop
+api-version: '1.21'
+description: A lightweight token economy with a configurable GUI shop.
+author: Samuel A
+
+commands:
+  tokens:
+    description: Check, pay, give, take or set tokens.
+    usage: /tokens [pay|give|take|set] <player> <amount>
+    aliases: [token]
+  tokenshop:
+    description: Open the token shop or reload the plugin.
+    usage: /tokenshop [reload]
+    aliases: [tshop]
+
+permissions:
+  tokenshop.use:
+    description: Check balance, pay others and use the shop.
+    default: true
+  tokenshop.admin:
+    description: Give, take and set tokens, and reload the plugin.
+    default: op

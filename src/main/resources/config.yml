@@ -1,0 +1,92 @@
+# ===============================
+#        TokenShop Config
+# ===============================
+
+# Tokens every new player starts with
+starting-balance: 0
+
+# Save the data file automatically every X minutes (0 = only on shutdown)
+autosave-minutes: 5
+
+# Messages support & color codes
+messages:
+  prefix: "&6&lTokens &8» &r"
+  balance: "&7You have &e%amount% &7tokens."
+  balance-other: "&e%player% &7has &e%amount% &7tokens."
+  paid: "&7You sent &e%amount% &7tokens to &e%player%&7."
+  received: "&7You received &e%amount% &7tokens from &e%player%&7."
+  given: "&7Gave &e%amount% &7tokens to &e%player%&7."
+  taken: "&7Took &e%amount% &7tokens from &e%player%&7."
+  set: "&7Set &e%player%&7's tokens to &e%amount%&7."
+  not-enough: "&cYou don't have enough tokens."
+  invalid-amount: "&cPlease enter a valid positive number."
+  player-not-found: "&cThat player has never joined the server."
+  no-permission: "&cYou don't have permission to do that."
+  players-only: "&cOnly players can do that."
+  cannot-pay-self: "&cYou can't pay yourself."
+  purchased: "&aYou bought &e%item% &afor &e%price% &atokens!"
+  reloaded: "&aTokenShop reloaded."
+  usage: "&7Usage: &e/tokens [pay|give|take|set] <player> <amount>"
+
+# ===============================
+#           Shop GUI
+# ===============================
+shop:
+  title: "&8Token Shop"
+  rows: 3
+  # Fill empty slots with this item (set to AIR to disable)
+  filler: GRAY_STAINED_GLASS_PANE
+
+  items:
+    diamonds:
+      slot: 10
+      material: DIAMOND
+      amount: 5
+      name: "&b5 Diamonds"
+      lore:
+        - "&7A shiny stack of diamonds."
+        - ""
+        - "&7Price: &e%price% tokens"
+      price: 50
+      # Console commands run on purchase (%player% = buyer)
+      commands:
+        - "give %player% diamond 5"
+
+    golden-apples:
+      slot: 12
+      material: GOLDEN_APPLE
+      amount: 3
+      name: "&63 Golden Apples"
+      lore:
+        - "&7Heal up in a hurry."
+        - ""
+        - "&7Price: &e%price% tokens"
+      price: 25
+      commands:
+        - "give %player% golden_apple 3"
+
+    vip-rank:
+      slot: 14
+      material: NETHER_STAR
+      amount: 1
+      name: "&d&lVIP Rank"
+      lore:
+        - "&7Unlock the VIP rank."
+        - ""
+        - "&7Price: &e%price% tokens"
+      price: 500
+      commands:
+        - "lp user %player% parent add vip"
+
+    xp-bottles:
+      slot: 16
+      material: EXPERIENCE_BOTTLE
+      amount: 16
+      name: "&a16 XP Bottles"
+      lore:
+        - "&7Level up your gear."
+        - ""
+        - "&7Price: &e%price% tokens"
+      price: 15
+      commands:
+        - "give %player% experience_bottle 16"
